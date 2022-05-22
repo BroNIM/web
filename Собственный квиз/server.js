@@ -1,9 +1,10 @@
 const express = require("express");
-const hbs = requie("hbs");
+const hbs = require("hbs");
 const sqlite3 = require('sqlite3').verbose();
 
 
 const app = express();
+const urlencodedParser = express.urlencoded({extended: false});
 
 app.get("/", function(req,res){
     res.sendFile(__dirname + "/templates/1p.html")
@@ -11,7 +12,13 @@ app.get("/", function(req,res){
 })
 
 app.get("/", function(req,res){
-    res.sendFile(__dirname + "/templates/play.html")
+    res.sendFile(__dirname + "/templates/Sign_up.html")
+    
+})
+
+app.get("/", function(req,res){
+    res.sendFile(__dirname + "/templates/Sign_up.html")
+    
 })
 
 
